@@ -1,14 +1,42 @@
+#
+# Inspired in the original defaults recipe at:
+#   https://github.com/ContinuumIO/anaconda-recipes/tree/master/lighttpd
+#
+# This updates to newer versins, builds with bzip2 and pcre support and
+# includes a more comprehensive example of MIME config.
+#
+# See also:
+#  - https://redmine.lighttpd.net/projects/lighttpd/wiki/InstallFromSource
+#  - https://redmine.lighttpd.net/projects/lighttpd/wiki/OptionalLibraries
+#
+
+{% set version = "1.4.48" %}
+{% set build_number= "0" %}
+
 package:
   name: lighttpd
-  version: 1.4.45
+  version: {{ version }}
 
 source:
-  fn: lighttpd-1.4.45.tar.gz
-  url: http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.45.tar.gz
-  sha256: bfc0d87ff9396185e3556c2bf2e685fc5b28d9461c8ce65e4f88286d4eb0ebc6
+  fn: lighttpd-{{ version }}.tar.gz
+  url: http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-{{ version }}.tar.gz
+  sha256: fc36f82877284eb506356aa80f483f133a9e17ec7cb79acd7e5b7733768538ef
 
 build:
-  detect_binary_files_with_prefix: True
+  number: {{ build_number }}
+  skip: True  # [win]
+
+requirements:
+  build:
+    - toolchain
+    - pkg-config
+    - zlib 1.2.11
+    - bzip2 1.0.*
+    - pcre 8.39*
+  run:
+    - zlib 1.2.11
+    - bzip2 1.0.*
+    - pcre 8.39*
 
 test:
   files:
@@ -32,3 +60,7 @@ about:
   doc_url: http://redmine.lighttpd.net/projects/lighttpd/wiki
   doc_source_url: http://redmine.lighttpd.net/projects/lighttpd/repository/revisions/master/show/doc
   dev_url: https://github.com/lighttpd
+
+extra:
+  recipe-maintainers:
+    - sdvillal
