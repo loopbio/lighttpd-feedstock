@@ -19,14 +19,16 @@ solution for every server that is suffering load problems.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/loopbio/lighttpd-feedstock.svg?style=shield)](https://circleci.com/gh/loopbio/lighttpd-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/loopbio/lighttpd-feedstock.svg?branch=master)](https://travis-ci.org/loopbio/lighttpd-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/loopbio/lighttpd-feedstock/master.svg?label=Linux)](https://circleci.com/gh/loopbio/lighttpd-feedstock)
+[![OSX](https://img.shields.io/travis/loopbio/lighttpd-feedstock/master.svg?label=macOS)](https://travis-ci.org/loopbio/lighttpd-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/loopbio/lighttpd/badges/version.svg)](https://anaconda.org/loopbio/lighttpd)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/loopbio/lighttpd/badges/downloads.svg)](https://anaconda.org/loopbio/lighttpd)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lighttpd-green.svg)](https://anaconda.org/loopbio/lighttpd) | [![Conda Downloads](https://img.shields.io/conda/dn/loopbio/lighttpd.svg)](https://anaconda.org/loopbio/lighttpd) | [![Conda Version](https://img.shields.io/conda/vn/loopbio/lighttpd.svg)](https://anaconda.org/loopbio/lighttpd) | [![Conda Platforms](https://img.shields.io/conda/pn/loopbio/lighttpd.svg)](https://anaconda.org/loopbio/lighttpd) |
 
 Installing lighttpd
 ===================
@@ -69,7 +71,7 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string).
+   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](http://conda.pydata.org/docs/building/meta-yaml.html#build-number-and-string)
+   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
