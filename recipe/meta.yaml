@@ -10,7 +10,7 @@
 #  - https://redmine.lighttpd.net/projects/lighttpd/wiki/OptionalLibraries
 #
 
-{% set version = "1.4.48" %}
+{% set version = "1.4.50" %}
 {% set build_number= "0" %}
 
 package:
@@ -20,7 +20,7 @@ package:
 source:
   fn: lighttpd-{{ version }}.tar.gz
   url: http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-{{ version }}.tar.gz
-  sha256: fc36f82877284eb506356aa80f483f133a9e17ec7cb79acd7e5b7733768538ef
+  sha256: c9a9f175aca6db22ebebbc47de52c54a99bbd1dce8d61bb75103609a3d798235
 
 build:
   number: {{ build_number }}
@@ -28,15 +28,16 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
     - pkg-config
-    - zlib 1.2.11
-    - bzip2 1.0.*
-    - pcre 8.39*
+  host:
+    - zlib
+    - bzip2
+    - pcre 8
   run:
-    - zlib 1.2.11
-    - bzip2 1.0.*
-    - pcre 8.39*
+    - zlib
+    - bzip2
+    - pcre 8
 
 test:
   files:
